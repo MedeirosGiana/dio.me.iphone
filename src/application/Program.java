@@ -4,9 +4,21 @@ import entities.IPhone;
 
 public class Program {
     public static void main(String[] args) {
+        System.out.println("**************Funcionalidades iPhone**************");
         IPhone iPhone = new IPhone();
-        System.out.println("Funcionalidades do Iphone");
-        System.out.println(iPhone.isLigado());
-        System.out.println(iPhone.ligar());
+        iPhone.ligar();
+        iPhone.atender();
+        iPhone.iniciarCorreioVoz();
+
+        System.out.println("**************Funcionalidades Navegador**************");
+        String url = "";
+        iPhone.exibirPagina(url);
+        iPhone.adicionarNovaAba();
+        iPhone.adicionarpagina();
+
+        System.out.println("**************Funcionalidades Reprodutor Musical**************");
+        iPhone.tocar();
+        iPhone.pausar();
+        iPhone.selecionarMusica(url);
     }
 }

@@ -1,7 +1,7 @@
-package interfaces;
+package entities.interfaces;
 
 public interface AparelhoTelefonico {
-    boolean ligar();
+    void ligar();
     void atender();
     void iniciarCorreioVoz();
 }

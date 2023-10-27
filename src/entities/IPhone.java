@@ -1,94 +1,57 @@
 package entities;
 
-import interfaces.AparelhoTelefonico;
-import interfaces.NavegadorInternet;
-import interfaces.ReprodutorMusical;
+import entities.interfaces.AparelhoTelefonico;
+import entities.interfaces.NavegadorInternet;
+import entities.interfaces.ReprodutorMusical;
 
 public class IPhone implements ReprodutorMusical, AparelhoTelefonico, NavegadorInternet {
-    private Boolean ligado;
-    private Boolean emChamada;
-    private Boolean reproduzindoMusica;
-    private String paginaAtual;
-    public IPhone(){
-        this.ligado = false;
-        this.emChamada = false;
-        this.reproduzindoMusica = false;
-        this.paginaAtual = "";
-    }
-
+    // Métodos da interface AparelhoTelefonico
     @Override
-    public boolean ligar() {
-        ligado = true;
-        return false;
+    public void ligar() {
+        System.out.println("Ligar");
+
     }
 
     @Override
     public void atender() {
-        if (ligado){
-            emChamada = true;
-        }
+        System.out.println("Atender");
     }
 
     @Override
     public void iniciarCorreioVoz() {
-        if (emChamada == true || ligado == false){
-            System.out.println("Deixe seu recado!");
-        }
+        System.out.println("Iniciar correio de voz");
     }
 
+    // Métodos da interface NavegadorInternet
     @Override
     public void exibirPagina(String url) {
-        if (ligado){
-            paginaAtual = url;
-        }
+        System.out.println("Exibir pagina");
     }
 
     @Override
     public void adicionarNovaAba() {
-        String url = "";
-        System.out.println("Adicionar nova aba:");
-        paginaAtual = url;
+        System.out.println("Adiciona nova aba");
     }
 
     @Override
     public void adicionarpagina() {
-        adicionarNovaAba();
+        System.out.println("Adiciona pagina");
     }
 
+    // Métodos da interface ReprodutorMusical
     @Override
     public void tocar() {
-        if (ligado){
-            reproduzindoMusica = true;
-        }
+        System.out.println("Tocar musica");
     }
 
     @Override
     public void pausar() {
-        reproduzindoMusica = false;
+        System.out.println("Pausar musica");
     }
 
     @Override
     public void selecionarMusica(String musica) {
-        String musicaEscolhida = "";
-        while (reproduzindoMusica){
-            System.out.println("Informe a musica desejada");
-            musica = musicaEscolhida;
-        }
+        System.out.println("Seleciona musica");
     }
 
-    public boolean isLigado() {
-        return ligado;
-    }
-
-    public boolean isEmChamada() {
-        return emChamada;
-    }
-
-    public boolean isReproduzindoMusica() {
-        return reproduzindoMusica;
-    }
-
-    public String getPaginaAtual() {
-        return paginaAtual;
-    }
 }
